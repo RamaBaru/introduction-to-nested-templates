@@ -1,8 +1,8 @@
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-            "adminUsername": {
+    {
+        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+                "adminUsername": {
         "type": "string",
         "defaultValue": "demouser",
         "metadata": {
@@ -23,14 +23,14 @@
             "description": "The FQDN of the Active Directory Domain to be created"
         }
     }
-    },
-    "variables": {
-            "baseUri":"https://raw.githubusercontent.com/RamaBaru/introduction-to-nested-templates/master",
-                "ADInstallScript":"[concat(variables('baseUri'),'/','script-extensions/deploy-ad.ps1')]",
-                "ADJoinScript":"[concat(variables('baseUri'),'/','script-extensions/domain-join.ps1')]"
-    },
-    "resources": [
-     {
+        },
+        "variables": {
+                "baseUri":"https://raw.githubusercontent.com/[your git user name]/introduction-to-nested-templates/master",
+                    "ADInstallScript":"[concat(variables('baseUri'),'/','script-extensions/deploy-ad.ps1')]",
+                    "ADJoinScript":"[concat(variables('baseUri'),'/','script-extensions/domain-join.ps1')]"
+        },
+        "resources": [
+            {
     "name": "VirtualNetwork",
     "type": "Microsoft.Resources/deployments",
     "apiVersion": "2016-09-01",
@@ -42,7 +42,7 @@
         "contentVersion": "1.0.0.0"
         }
     }
- },
+},
     {
         "name": "ActiveDirectory",
         "type": "Microsoft.Resources/deployments",
@@ -100,10 +100,7 @@
             }
         }
     }
-    
-
-    
-    ],
-    "outputs": {
+],
+        "outputs": {
+        }
     }
-}
